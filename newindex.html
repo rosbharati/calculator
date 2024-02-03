@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="newstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+}
+.calculator {
+    background-color:#f0ecec;
+}
+.menuandtranslator {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0ecec;
+    padding: 10px; 
+}
+#newdisplay {
+    display:flex;
+    justify-content:right;
+    width:auto;
+    height:40px;
+    font-family:cursive;
+    font-size:25px;
+    color:#0c0c0c;
+    background-color: #f0ecec;
+}
+
+
+#display {
+    display: flex;
+    justify-content: right;
+    width: auto;
+    height: 100px;
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: 10px;
+    color: #0c0c0c;
+    background-color: #f0ecec;
+    margin: 10px; 
+}
+
+.darkmode12 {
+    background-color:#303030;
+    color:white;
+    
+}
+.voiceWithtoggleAndsettings {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    border-radius:20px;
+    padding: 10px; 
+}
+#changing_thevoice {
+    margin-left:40px;
+}
+#settings {
+    margin-left:40px;
+}
+#allbuttons {
+    height:490px;
+    background-color: #f8f5f5;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.num2 {
+  background-color:#605e5e;
+  box-shadow:3px 3px 3px #303030 ;
+}
+span {
+    display: inline-block;
+    justify-content: space-between;
+    vertical-align: middle; 
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background-color:  #f0ecec;
+    box-shadow: 3px 3px 3px #636262;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+
+.buttons_forcalculator {
+    font-size: 26px; 
+    font-weight: bold; 
+}
+
+.buttons_ofsvg {
+    padding-top: 10px; 
+}
+
+.colorful_buttons {
+    box-shadow: 4px 4px 4px #050505;
+}
+
+.decimal {
+    font-size: 32px; 
+    padding-left:  15px; 
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.opacity2 {
+    opacity: 1;
+    box-shadow: 3px 3px 3px #303030;
+}
+.lastline{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+}
+#longline {
+    /* margin-left:90px;
+    margin-top:20px; */
+    
+    width:150px;
+    height:6px;
+    background-color: rgb(193, 188, 188);
+    border-radius:10px;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="calculator darkmode">
+
+        <div class="menuandtranslator darkmode">
+            <svg id="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill=" #292626">
+                <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+            </svg>
+            <svg id="languagetranslator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"
+                fill=" #292626">
+                <path
+                    d="M5 15V17C5 18.0544 5.81588 18.9182 6.85074 18.9945L7 19H10V21H7C4.79086 21 3 19.2091 3 17V15H5ZM18 10L22.4 21H20.245L19.044 18H14.954L13.755 21H11.601L16 10H18ZM17 12.8852L15.753 16H18.245L17 12.8852ZM8 2V4H12V11H8V14H6V11H2V4H6V2H8ZM17 3C19.2091 3 21 4.79086 21 7V9H19V7C19 5.89543 18.1046 5 17 5H14V3H17ZM6 6H4V9H6V6ZM10 6H8V9H10V6Z">
+
+                </path>
+            </svg>
+        </div>
+        <section id="newdisplay"></section>
+        <section id="display" ></section>
+        <section id="allbuttons">
+            <div class="voiceWithtoggleAndsettings">
+
+                <b id="change_in_toogle">
+                    <b id="change_togglemode">
+                        <svg id="toggle_left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48"
+                            height="48" fill="orange">
+                            <path
+                                d="M8 7C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H16C18.7614 17 21 14.7614 21 12C21 9.23858 18.7614 7 16 7H8ZM8 5H16C19.866 5 23 8.13401 23 12C23 15.866 19.866 19 16 19H8C4.13401 19 1 15.866 1 12C1 8.13401 4.13401 5 8 5ZM8 15C6.34315 15 5 13.6569 5 12C5 10.3431 6.34315 9 8 9C9.65685 9 11 10.3431 11 12C11 13.6569 9.65685 15 8 15Z">
+                            </path>
+                        </svg>
+                        <svg id="toggle_right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48"
+                            height="48" fill="white" style="display:none">
+                            <path
+                                d="M8 5H16C19.866 5 23 8.13401 23 12C23 15.866 19.866 19 16 19H8C4.13401 19 1 15.866 1 12C1 8.13401 4.13401 5 8 5ZM16 15C17.6569 15 19 13.6569 19 12C19 10.3431 17.6569 9 16 9C14.3431 9 13 10.3431 13 12C13 13.6569 14.3431 15 16 15Z">
+                            </path>
+                        </svg>
+                    </b>
+                </b>
+                <b id="changing_thevoice">
+                    <b id="switch_voice">
+                        <svg id="voice_off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36"
+                            height="36" style="display:block" fill="currentColor">
+                            <path
+                                d="M16.4249 17.839C15.3929 18.4228 14.2341 18.8087 13.0002 18.9451V23H11.0002V18.9451C6.82854 18.4839 3.51623 15.1716 3.05509 11H5.07105C5.55627 14.3923 8.47368 17 12.0002 17C13.0503 17 14.0464 16.7688 14.9404 16.3544L13.3902 14.8042C12.9489 14.9317 12.4825 15 12.0002 15C9.23873 15 7.00016 12.7614 7.00016 10V8.41421L1.39355 2.80761L2.80777 1.3934L22.6068 21.1924L21.1925 22.6066L16.4249 17.839ZM19.3747 15.1604L17.9323 13.7179C18.4407 12.9084 18.788 11.9874 18.9293 11H20.9452C20.7754 12.5366 20.2187 13.9565 19.3747 15.1604ZM16.4658 12.2514L7.68575 3.47139C8.55427 1.99268 10.1613 1 12.0002 1C14.7616 1 17.0002 3.23858 17.0002 6V10C17.0002 10.8099 16.8076 11.5748 16.4658 12.2514Z">
+                            </path>
+                        </svg>
+                        <svg     id="voice_on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"
+                            fill="rgba(239,48,12,1)" style="display:none">
+                            <path
+                                d="M11.9998 1C14.7612 1 16.9998 3.23858 16.9998 6V10C16.9998 12.7614 14.7612 15 11.9998 15C9.23833 15 6.99976 12.7614 6.99976 10V6C6.99976 3.23858 9.23833 1 11.9998 1ZM3.05469 11H5.07065C5.55588 14.3923 8.47329 17 11.9998 17C15.5262 17 18.4436 14.3923 18.9289 11H20.9448C20.4837 15.1716 17.1714 18.4839 12.9998 18.9451V23H10.9998V18.9451C6.82814 18.4839 3.51584 15.1716 3.05469 11Z">
+                            </path>
+                        </svg>
+                    </b>
+                </b>
+                <svg id="settings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"
+                    fill="currentColor">
+                    <path
+                        d="M8.68637 4.00008L11.293 1.39348C11.6835 1.00295 12.3167 1.00295 12.7072 1.39348L15.3138 4.00008H19.0001C19.5524 4.00008 20.0001 4.4478 20.0001 5.00008V8.68637L22.6067 11.293C22.9972 11.6835 22.9972 12.3167 22.6067 12.7072L20.0001 15.3138V19.0001C20.0001 19.5524 19.5524 20.0001 19.0001 20.0001H15.3138L12.7072 22.6067C12.3167 22.9972 11.6835 22.9972 11.293 22.6067L8.68637 20.0001H5.00008C4.4478 20.0001 4.00008 19.5524 4.00008 19.0001V15.3138L1.39348 12.7072C1.00295 12.3167 1.00295 11.6835 1.39348 11.293L4.00008 8.68637V5.00008C4.00008 4.4478 4.4478 4.00008 5.00008 4.00008H8.68637ZM12.0001 15.0001C13.6569 15.0001 15.0001 13.6569 15.0001 12.0001C15.0001 10.3432 13.6569 9.00008 12.0001 9.00008C10.3432 9.00008 9.00008 10.3432 9.00008 12.0001C9.00008 13.6569 10.3432 15.0001 12.0001 15.0001Z">
+                    </path>
+                </svg>
+
+
+            </div>
+
+
+            
+            <div id="firstrow">
+                <span onclick="cleardisplay()" class="buttons_forcalculator opacity"
+                    style="background-color:rgb(95, 171, 180);">C</span>
+                <span onclick="button('%')" class="buttons_forcalculator opacity"
+                    style="background-color:rgb(65, 172, 119)">%</span>
+                <span onclick="deleteone()" class="buttons_ofsvg opacity" style="background-color: rgb(97, 154, 232);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"
+                        fill="currentColor">
+                        <path
+                            d="M6.53451 3H20.9993C21.5516 3 21.9993 3.44772 21.9993 4V20C21.9993 20.5523 21.5516 21 20.9993 21H6.53451C6.20015 21 5.88792 20.8329 5.70246 20.5547L0.369122 12.5547C0.145189 12.2188 0.145189 11.7812 0.369122 11.4453L5.70246 3.4453C5.88792 3.1671 6.20015 3 6.53451 3ZM12.9993 10.5858L10.1709 7.75736L8.75668 9.17157L11.5851 12L8.75668 14.8284L10.1709 16.2426L12.9993 13.4142L15.8277 16.2426L17.242 14.8284L14.4135 12L17.242 9.17157L15.8277 7.75736L12.9993 10.5858Z">
+                        </path>
+                    </svg>
+                </span>
+                <span onclick="button('/')" class="buttons_ofsvg opacity " style="background-color: rgb(151, 79, 151);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"
+                        fill="currentColor">
+                        <path
+                            d="M5 11H19V13H5V11ZM12 8C11.1716 8 10.5 7.32843 10.5 6.5C10.5 5.67157 11.1716 5 12 5C12.8284 5 13.5 5.67157 13.5 6.5C13.5 7.32843 12.8284 8 12 8ZM12 19C11.1716 19 10.5 18.3284 10.5 17.5C10.5 16.6716 11.1716 16 12 16C12.8284 16 13.5 16.6716 13.5 17.5C13.5 18.3284 12.8284 19 12 19Z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+
+            <div id="secondrow">
+                <span onclick="button(7)" class="buttons_forcalculator num">7</span>
+                <span onclick="button(8)" class="buttons_forcalculator num">8</span>
+                <span onclick="button(9)" class="buttons_forcalculator num">9</span>
+                <span onclick="button('*')" class="buttons_ofsvg opacity" style="background-color:rgb(112, 119, 203);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"
+                        fill="currentColor">
+                        <path
+                            d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+
+            <div id="thirdrow">
+                <span onclick="button(4)" class="buttons_forcalculator num">4</span>
+                <span onclick="button(5)" class="buttons_forcalculator num">5</span>
+                <span onclick="button(6)" class="buttons_forcalculator num">6</span>
+                <span onclick="button('-')" class="buttons_ofsvg opacity" style="background-color: rgb(184, 153, 73);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"
+                        fill="currentColor">
+                        <path d="M5 11V13H19V11H5Z"></path>
+                    </svg>
+                </span>
+
+            </div>
+
+
+            <div class="fourthrow">
+                <span onclick="button(1)" class="buttons_forcalculator num">1</span>
+                <span onclick="button(2)" class="buttons_forcalculator num">2</span>
+                <span onclick="button(3)" class="buttons_forcalculator num">3</span>
+                <span onclick="button('+')" class="buttons_ofsvg opacity" style="background-color: rgb(100, 217, 176);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"
+                        fill="currentColor">
+                        <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+                    </svg>
+                </span>
+
+            </div>
+            <div class="fifthhrow">
+                <span onclick="plusminus()" class="buttons_forcalculator num">+/-</span>
+                <span onclick="button(0)" class="buttons_forcalculator num">0</span>
+                <span onclick="buttons('.')" class="buttons_forcalculator decimal num">.</span>
+                <span onclick="calculate()" class="buttons_ofsvg opacity" style="background-color: rgb(162, 111, 90);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"
+                        fill="currentColor">
+                        <path d="M19 8H5V10H19V8ZM19 14H5V16H19V14Z"></path>
+                    </svg>
+                </span>
+            </div>
+        
+            <div class="lastline">
+            <div id="longline"></div>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        const menu = document.getElementById('menu');
+const languagetranslator = document.getElementById('languagetranslator');
+const toggle_right = document.getElementById('toggle_right');
+const toggle_left = document.getElementById('toggle_left');
+const settings = document.getElementById('settings');
+const voice_off1 = document.getElementById('voice_off');
+const allbuttons = document.getElementById('allbuttons');
+const opacity12 = document.getElementsByClassName('opacity');
+const darkmode = document.getElementsByClassName('darkmode');
+const num = document.getElementsByClassName('num');
+const newdisplay = document.getElementById('newdisplay')
+const darkmodeofdisplay = document.getElementById('display')
+const longline = document.getElementById('longline')
+const change_togglemode = document.getElementById('change_in_toogle');
+
+change_togglemode.addEventListener('click', function () {
+    if (toggle_left.style.display === 'block') {
+        toggle_left.style.display = 'none';
+        toggle_right.style.display = 'block';
+        menu.style.fill = 'white';
+        languagetranslator.style.fill = 'white';
+        voice_off1.style.fill = 'white';
+        settings.style.fill = 'white';
+        newdisplay.style.backgroundColor = '#303030';
+        newdisplay.style.color = '#ffffff';
+        darkmodeofdisplay.style.backgroundColor = '#303030';
+        darkmodeofdisplay.style.color = '#ffffff';
+        allbuttons.style.backgroundColor = '#605e5e';
+        longline.style.backgroundColor = '#333333';
+        for (let i = 0; i < opacity12.length; i++) {
+            opacity12[i].classList.add('opacity2')
+        };
+        for (let a = 0; a < darkmode.length; a++) {
+            darkmode[a].classList.add('darkmode12')
+        };
+
+        for (let r = 0; r < num.length; r++) {
+            num[r].classList.add('num2');
+        };
+
+    } else {
+        toggle_left.style.display = 'block';
+        toggle_right.style.display = 'none';
+        menu.style.fill = '';
+        languagetranslator.style.fill = '';
+        voice_off1.style.fill = '';
+
+        settings.style.fill = '';
+        newdisplay.style.backgroundColor = '';
+        newdisplay.style.color = '';
+        darkmodeofdisplay.style.backgroundColor = '';
+        darkmodeofdisplay.style.color = '';
+        allbuttons.style.backgroundColor = '';
+        longline.style.backgroundColor = '';
+        for (let i = 0; i < opacity12.length; i++) {
+            opacity12[i].classList.remove('opacity2');
+        };
+        for (let a = 0; a < darkmode.length; a++) {
+            darkmode[a].classList.remove('darkmode12');
+        };
+        for (let r = 0; r < num.length; r++) {
+            num[r].classList.remove('num2');
+        };
+    }
+});
+const voice_off = document.getElementById('voice_off');
+const voice_on = document.getElementById('voice_on');
+const switch_voice = document.getElementById('switch_voice');
+switch_voice.addEventListener('click', function () {
+    if (voice_off.style.display === 'block') {
+        voice_off.style.display = 'none';
+        voice_on.style.display = 'block';
+    }
+    else {
+        voice_off.style.display = 'block';
+        voice_on.style.display = 'none';
+    }
+
+});
+
+if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+    const reco = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    reco.lang = 'en-US';
+    const dispaly = document.getElementById('display');
+
+    const clicked = document.getElementById('changing_thevoice');
+    let anotherword = '';
+
+    clicked.addEventListener('click', function () {
+        reco.start();
+
+
+    });
+
+    reco.onresult = function (event) {
+        const result = event.results[0][0].transcript;
+        anotherword= result + '';
+        const reco = anotherword.replace('.', '');
+        if (reco === 'Hello') {
+            dispaly.innerText = `${reco}! 
+            'Please command numbers 
+             with operators'`;
+
+        }
+        else {
+            dispaly.innerText = `  ${reco}`;
+            if (reco === 'Clear all') {
+                dispaly.innerText = '';
+            }
+        }
+
+    };
+
+    reco.onend = () => {
+        console.log('Stopped listening.');
+    };
+
+    reco.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+    };
+}
+
+function cleardisplay() {
+    var display = document.getElementById('display');
+    var newdisplay = document.getElementById('newdisplay');
+    newdisplay.innerText = `= ${display.innerText}`;
+    display.innerText = '';
+}
+function button(value) {
+    var display12 = document.getElementById('display');
+    display12.innerText += value;
+
+}
+function deleteone() {
+
+    var display123 = document.getElementById('display');
+    var deleteone = display123.textContent;
+    if (deleteone.length > 0) {
+        var deleted = deleteone.slice(0, -1);
+        display.textContent = deleted;
+    }
+}
+function plusminus() {
+    // alert(" I still don't know its use");
+    var dispaly123 = document.getElementById('display');
+    dispaly123.innerText = 'Error';
+
+
+
+}
+function calculate() {
+    var expression = document.getElementById('display').innerText;
+    try {
+        var result = eval(expression);
+        document.getElementById('display').innerText = `${result}`;
+    } catch (error) {
+        document.getElementById('display').innerText = "Error";
+    }
+}
+
+
+
+    </script>
+</body>
+
+</html>
